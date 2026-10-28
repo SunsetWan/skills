@@ -1,3 +1,5 @@
+> This fork defaults engineering working documents to `docs-ai/`. See the [local documentation policy](./.agents/docs-ai-policy.md) for compatibility and installation scope.
+
 <p>
   <a href="https://www.aihero.dev/s/skills-newsletter">
     <picture>
@@ -209,6 +211,9 @@ Software engineering fundamentals matter more than ever. These skills are my bes
 ## Reference
 
 These split on one axis: who can invoke them. **User-invoked** skills are reachable only when you type them (e.g. `/grill-me`); their job is to orchestrate. **Model-invoked** skills can be invoked by you _or_ reached for automatically by the agent when the task fits; they hold the reusable discipline. A user-invoked skill may invoke model-invoked skills, but never another user-invoked one.
+
+- **[project-skill-config](./skills/engineering/project-skill-config/SKILL.md)**: Resolve project tracker, labels, and local document paths; default to `docs-ai/` while retaining legacy configuration.
+
 
 ### Engineering
 

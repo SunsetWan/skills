@@ -20,6 +20,9 @@ Reachable only when you type them (Claude Code: `disable-model-invocation: true`
 
 ## Model-invoked
 
+- **[project-skill-config](./project-skill-config/SKILL.md)**: Resolve project tracker, labels, and local document paths; default to `docs-ai/` while retaining legacy configuration.
+
+
 Model- or user-reachable (rich trigger phrasing so the model can reach for them).
 
 - **[prototype](./prototype/SKILL.md)**: Build a throwaway prototype to answer a design question: a single shareable HTML file for state/logic, or several toggleable UI variations.
