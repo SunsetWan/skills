@@ -5,7 +5,7 @@ description: Investigate a question against high-trust primary sources and captu
 
 Call the Skill tool with "project-skill-config" before reading or writing project documents. If this harness has no Skill tool, load that installed skill's `SKILL.md` through skill discovery. Use its resolved tracker, labels, and document paths throughout this skill and pass them to subagents.
 
-Spin up a **background agent** to do the research, so you keep working while it reads.
+Spin up a **background agent** to do the research, so you keep working while it reads. Start it with a fresh context window.
 
 Its job:
 
