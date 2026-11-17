@@ -3,6 +3,8 @@ name: diagnosing-bugs
 description: Diagnosis loop for hard bugs and performance regressions. Use when the user says "diagnose"/"debug this", or reports something broken/throwing/failing/slow.
 ---
 
+Call the Skill tool with "project-skill-config" before reading or writing project documents. If this harness has no Skill tool, load that installed skill's `SKILL.md` through skill discovery. Use its resolved tracker, labels, and document paths throughout this skill and pass them to subagents.
+
 # Diagnosing Bugs
 
 A discipline for hard bugs. Skip phases only when explicitly justified.

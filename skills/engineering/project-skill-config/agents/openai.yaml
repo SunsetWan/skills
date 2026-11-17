@@ -1,0 +1,3 @@
+interface:
+  display_name: "Project Skill Config"
+  short_description: "Resolve project document paths and tracker configuration"
