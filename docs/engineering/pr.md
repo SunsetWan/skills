@@ -2,9 +2,7 @@
 
 In this fork, engineering document paths and tracker configuration are resolved through the shared project configuration reader. New AI working documents default to `docs-ai/`; existing configuration and explicit user destinations take precedence.
 
-`pr` defines a pull request body with a single **Summary** section that shows the change and explains its purpose. Verification results and risks are optional, brief additions within Summary when they help explain the change. It is a format reference, not a workflow. It does not push a branch, open the PR, or decide what goes into it. It tells the [agent](https://www.aihero.dev/ai-coding-dictionary/agent) what the body should look like when it writes one.
-
-The summary is a visual, not a paragraph. A default PR body describes the diff in prose. This one picks the **smallest view** that makes the key point clear (pseudocode, a call tree, a component tree, a file tree, a Mermaid diagram, or a shaped diff) and keeps the words around it brief. The reviewer already has the diff open, so the body shows them its shape before they read it.
+`pr` gives the [agent](https://www.aihero.dev/ai-coding-dictionary/agent) a format for the pull request body. One short **Summary** tells reviewers what changed and why it matters.
 
 ## When to reach for it
 
@@ -18,9 +16,7 @@ Type `/pr`, or the agent reaches for it automatically whenever it is writing a P
 
 ## The template
 
-The body contains one `## Summary` section. Place one or more small visuals next to the short text they support. Use one, sometimes several, rarely all of them. Keep only the calls, files, props, and boundaries the reviewer needs.
-
-Describe what changed and why. Include a verification result or risk briefly within Summary only when it helps explain the change.
+Most changes fit in one or two sentences under `## Summary`. Up to three one-sentence bullets can give distinct changes their own space. A single compact visual can carry details about a flow, dependency, or boundary when seeing the relationship helps the reviewer.
 
 ## Common questions
 
@@ -30,7 +26,7 @@ No. `pr` covers only the body. [implement](https://aihero.dev/skills-implement) 
 
 **Won't it just produce another wall of text and diagrams?**
 
-The skill tells the agent to skip preambles, keep prose brief, and pick the smallest view, usually one visual and rarely all of them. Verification and risk details are optional. If you still get a stack of diagrams, the agent has ignored that guidance. If the body is huge because the diff is huge, the problem is the size of the PR, and `pr` will not split it for you.
+The summary starts with the change and its purpose. When a visual makes a relationship easier to understand, it takes the place of the prose that would explain that relationship.
 
 **My repo already has a PR template. Which one wins?**
 
@@ -38,7 +34,7 @@ Neither, by default. `pr` has its own template and does not look for `.github/pu
 
 **Is the output HTML? Why doesn't the Mermaid diagram render?**
 
-The output is a markdown PR body, not an HTML page. GitHub and GitLab render Mermaid blocks in a PR description, but a terminal does not, so the diagram looks like raw text while the agent is still showing it to you locally. Users on CLI harnesses have worked around that with an ASCII Mermaid renderer or by having the agent attach an HTML version to the PR. Mermaid is one of six views. A call tree, file tree or shaped diff reads the same everywhere.
+The output is a Markdown PR body. GitHub and GitLab can render Mermaid blocks in the description. A plain terminal shows the source of the diagram. A text tree or diff sketch is readable in both places.
 
 **Can it sort through the review comments that come back?**
 
@@ -50,7 +46,7 @@ No. It writes the body at one point in time, and a PR that changes under review 
 
 **My change has no UI. Does it need verification details?**
 
-Verification results and risks are optional for every PR. When a test result or console output helps explain a migration, a background job, or a refactor, mention it briefly within Summary.
+A verified result, scope limit, or risk belongs in the Summary when it affects the reviewer's judgment. The same rule applies to UI and non-UI changes.
 
 **Can it mark the body as written by an LLM?**
 
@@ -58,9 +54,9 @@ Not by itself. One user's approach is a standing instruction in the repo's agent
 
 ## It's working if
 
-- You can tell what the PR changes from the Summary visual alone, before opening the diff.
-- The body has one Summary section and no preamble.
-- Verification and risk details appear only when they help explain the change, briefly within Summary.
+- You can tell what changed and why in one short Summary.
+- Any visual makes an important relationship easier to see.
+- Any verification result, scope limit, or risk helps you make a review decision.
 
 ## Where it fits
 
